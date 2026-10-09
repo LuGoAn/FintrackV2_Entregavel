@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefWidth="460.0" spacing="12.0" stylesheets="@estilo.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaCadastroTransacaoController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+    <Label styleClass="titulo" text="Nova Transação" />
+    <GridPane hgap="10.0" vgap="10.0">
+        <columnConstraints>
+            <ColumnConstraints minWidth="100.0" prefWidth="110.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+        </rowConstraints>
+        <Label text="Descrição:" GridPane.rowIndex="0" />
+        <TextField fx:id="txtDescricao" promptText="Ex: Salário, Aluguel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Valor (R$):" GridPane.rowIndex="1" />
+        <TextField fx:id="txtValor" promptText="Ex: 150.00" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Tipo:" GridPane.rowIndex="2" />
+        <ComboBox fx:id="cbTipo" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Data:" GridPane.rowIndex="3" />
+        <DatePicker fx:id="dpData" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label text="Recorrente:" GridPane.rowIndex="4" />
+        <CheckBox fx:id="chkRecorrente" text="Transação mensal fixa" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    </GridPane>
+    <HBox alignment="CENTER_RIGHT" spacing="10.0">
+        <padding>
+            <Insets top="10.0" />
+        </padding>
+        <Button fx:id="btnCancelar" onAction="#handleCancelar" text="Cancelar" />
+        <Button fx:id="btnSalvar" onAction="#handleSalvar" text="Salvar" />
+    </HBox>
+</VBox>
